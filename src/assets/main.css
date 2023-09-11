@@ -10,8 +10,34 @@
     ---saturn:#CD5120;
     ---uranus:#1EC2A4;
     ---neptune:#2D68F0;
+    ---background:#070724;
   }
 
-  /* body {
-    background: var(--background-color);
-  } */
+
+ body{
+   background-color: var(---background);
+   font-family: 'League Spartan', sans-serif;
+   font-size: 0.875rem;
+   line-height: 1.7857em;
+ }
+
+ h1{
+    font-family:'Antonio', sans-serif;
+    font-size: 5rem;
+    line-height: 1.2875em;
+ }
+ h2{
+    font-family:'Antonio', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.3em;
+ }
+ h3{
+    font-size: 0.75rem;
+    line-height: 2.083em;
+    font-weight: bold;
+ }
+ h4{
+    font-size: 0.6875rem;
+    line-height: 2.2727em;
+    font-weight: bold;
+ }
