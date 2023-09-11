@@ -2,23 +2,24 @@
     --primary: #FFFFFF;
     --secondary:#838391;
     --second-btn: #38384f;
-    ---mercury:#419EBB;
-    ---venus:#EDA249;
-    ---earth:#6F2ED6;
-    ---mars:#D14C32;
-    ---jupyter:#D83134;
-    ---saturn:#CD5120;
-    ---uranus:#1EC2A4;
-    ---neptune:#2D68F0;
-    ---background:#070724;
+    --mercury:#419EBB;
+    --venus:#EDA249;
+    --earth:#6F2ED6;
+    --mars:#D14C32;
+    --jupyter:#D83134;
+    --saturn:#CD5120;
+    --uranus:#1EC2A4;
+    --neptune:#2D68F0;
+    --background:#070724;
   }
 
 
  body{
-   background-color: var(---background);
+   background-color: var(--background);
    font-family: 'League Spartan', sans-serif;
    font-size: 0.875rem;
    line-height: 1.7857em;
+   color:var(--primary)
  }
 
  h1{
