@@ -3,9 +3,10 @@ import MainView from '../views/MainView.vue'
 
 const routes =[
   {
-    path: '/',
+    path: '/:planetName',
     name: 'MainView',
-    component: MainView
+    component: MainView,
+    props:true
   }
 ]
 

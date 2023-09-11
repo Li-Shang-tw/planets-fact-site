@@ -8,7 +8,7 @@ export default{
 
 <template>   
    <TheNavigator/>
- <RouterView />
+ <RouterView  />
 
 
 </template>

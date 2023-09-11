@@ -1,5 +1,12 @@
 <script>
-
+import sourceData from "../data.json"
+export default{
+    data(){
+      return {
+        planets:sourceData
+      }  
+    }
+}
 </script>
 
 <template>
@@ -10,8 +17,8 @@
             <img src="../assets/images/icon-hamburger.svg" alt="icon-hamburger">
         </button>
         <ul class="nav_list">
-            <li class="nav_item">
-                <router-link to="/">User</router-link>
+            <li class="nav_item" v-for="planet in planets" :Key="planet.name">
+                <router-link :to="{ name: 'MainView', params: { planetName:planet.name  }}">{{ planet.name }}</router-link>
             </li>
         </ul>
     </nav>
