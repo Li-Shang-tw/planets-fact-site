@@ -28,6 +28,15 @@ export default{
 
 </script>
 
-<template>
-  <h1>{{planet.name  }}</h1>
+<template >
+  <div class="main">
+    <h1 >{{planet.name  }}</h1>
+  </div>
+  
 </template>
+
+<style >
+.main{
+  display: none;
+}
+</style>

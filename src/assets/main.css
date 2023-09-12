@@ -6,7 +6,7 @@
     --venus:#EDA249;
     --earth:#6F2ED6;
     --mars:#D14C32;
-    --jupyter:#D83134;
+    --jupiter:#D83134;
     --saturn:#CD5120;
     --uranus:#1EC2A4;
     --neptune:#2D68F0;
@@ -42,3 +42,9 @@
     line-height: 2.2727em;
     font-weight: bold;
  }
+
+ /**layout**/
+ .row{
+   display:flex;
+ }
+ 
