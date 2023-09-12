@@ -1,6 +1,11 @@
 <script >
 import sourceData from "../data.json"
+import SwitchBtn from "../components/SwitchBtn.vue"
+import Intro from "../components/Intro.vue"
+import Pictures from "../components/Picture.vue"
+import DataSection from "../components/DataSection.vue"
 export default{
+  components:{SwitchBtn,Intro,Pictures,DataSection},
   data(){
     return{
       
@@ -29,8 +34,12 @@ export default{
 </script>
 
 <template >
-  
-    <h1 >{{planet.name  }}</h1>
+ 
+    <DataSection/>
+    <Intro/>
+    <Pictures/>
+    <SwitchBtn/>
+
   
   
 </template>
