@@ -3,7 +3,8 @@ import sourceData from "../data.json"
 export default{
     data(){
       return {
-        planets:sourceData
+        planets:sourceData,
+        showNavList:false
       }  
     },
     methods:{
@@ -18,10 +19,13 @@ export default{
                 margin:[0,'1em'] ,
             }
             
+        },
+        toggleNavList(){
+            this.showNavList =!this.showNavList;
         }
     },
     mounted(){
-        console.log(this.iconStyle("Mars"))
+        
     }
 }
 </script>
@@ -31,12 +35,12 @@ export default{
     <nav class="nav">
         <div class="nav__head row">
             <h2 class="logo">THE PLANETS</h2>
-        <button class="nav__btn--toogle">
+        <button class="nav__btn--toogle" @click="toggleNavList">
             <img src="../assets/images/icon-hamburger.svg" alt="icon-hamburger">
         </button>
         </div>
        
-        <ul class="nav_list">
+        <ul class="nav_list" v-if="showNavList">
             <li class="nav_item" v-for="planet in planets" :Key="planet.name">
                 <router-link class="nav_link" :to="{ name: 'MainView', params: { planetName:planet.name  }}">
                     <div class="nav__link__icon"  :style="iconStyle(planet.name )">.</div>
@@ -54,15 +58,16 @@ export default{
     justify-content: space-between;
 }
 
+
+
 /*---按鈕樣式 */
 .nav__btn--toogle{
     background-color: var(--background);
     border:0px;
 }
 
-.nav_list{
-    height: 80vh; /*---手機板:導覽列占滿螢幕高度*/
-    
+.nav_list{    
+    height: 80vh; /*---手機板:導覽列占螢幕高度80%*/    
     display:flex;
     flex-direction: column;
 }
@@ -84,6 +89,8 @@ export default{
     width:0.5em;
     margin:0 0 0 auto;
  }
+
+
 
 
 </style>

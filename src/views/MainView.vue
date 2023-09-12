@@ -36,7 +36,7 @@ export default{
 </template>
 
 <style >
-.main{
-  display: none;
+.main--hide{
+  display:none;
 }
 </style>
