@@ -6,13 +6,17 @@ export default{
 }
 </script>
 
-<template>   
+<template>
+<div class="container">
    <TheNavigator/>
  <RouterView  />
-
+</div>   
 
 </template>
 
 <style >
-
+.container{
+  width:90%;
+  margin: 0 auto;
+}
 </style>
