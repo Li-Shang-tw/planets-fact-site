@@ -29,14 +29,12 @@ export default{
 </script>
 
 <template >
-  <div class="main">
+  
     <h1 >{{planet.name  }}</h1>
-  </div>
+  
   
 </template>
 
 <style >
-.main--hide{
-  display:none;
-}
+
 </style>

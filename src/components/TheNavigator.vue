@@ -3,10 +3,10 @@ import sourceData from "../data.json"
 export default{
     data(){
       return {
-        planets:sourceData,
-        showNavList:false
+        planets:sourceData        
       }  
     },
+    props:["showNavList"],
     methods:{
         iconStyle(planetName){
             const iconColor ="var(--"+planetName.toLowerCase()+")";
@@ -21,7 +21,8 @@ export default{
             
         },
         toggleNavList(){
-            this.showNavList =!this.showNavList;
+           this.$emit('ChangeshowNavList');
+
         }
     },
     mounted(){
