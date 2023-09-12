@@ -2,20 +2,20 @@
 import sourceData from "../data.json"
 import SwitchBtn from "../components/SwitchBtn.vue"
 import Intro from "../components/Intro.vue"
-import Pictures from "../components/Picture.vue"
+// import Pictures from "../components/Pictures.vue"
 import DataSection from "../components/DataSection.vue"
 export default{
-  components:{SwitchBtn,Intro,Pictures,DataSection},
+  components:{SwitchBtn,Intro,DataSection},
   data(){
-    return{
-      
-      planet:{}
+    return{      
+      planet:{},
+      model:'overview',
+      description:"",
+      url:"",
     }
   },
   props:['planetName'],
-  mounted(){
-   
-  },watch:{
+  watch:{
     planetName(){
       this.updatePlanet();
     }
@@ -25,25 +25,43 @@ export default{
   },
   methods:{
     updatePlanet(){
-      this.planet = sourceData.find((item)=>item.name===this.planetName)  ;
+      this.planet = sourceData.find((item)=>item.name===this.planetName);
+      this.updateDescriptionAndUrl();    
+    },
+    changeModel(model){
+      this.model =model;
+      this.updateDescriptionAndUrl();
       
+    },
+    updateDescriptionAndUrl(){
+      if(this.model ==="overview"){
+        this.description =this.planet.overview.content;
+        this.url =this.planet.overview.source;        
+      }else if(this.model ==="structure"){
+        this.description =this.planet.structure.content;
+        this.url =this.planet.structure.source;        
+      }else if(this.model ==="geology"){
+        this.description =this.planet.geology.content;
+        this.url =this.planet.geology.source;        
+      }
     }
+
   }
 }
 
 </script>
 
 <template >
- 
-    <DataSection/>
-    <Intro/>
-    <Pictures/>
-    <SwitchBtn/>
-
+   
+    <SwitchBtn class="btn" @passModel="changeModel"/>   
+    <Intro class="intro" :planetProp ="planet" :descriptionProp="description" :urlProp="url"  :modelProp="model"/>    
+    <DataSection class="data"/>
   
+ 
   
 </template>
 
 <style >
+
 
 </style>
