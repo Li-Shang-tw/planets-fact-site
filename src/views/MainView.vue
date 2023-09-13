@@ -11,22 +11,25 @@ export default{
       planet:{},
       model:'overview',
       description:"",
-      imgUrl:"",     
+      imgUrl:"", 
+      colorName:""    
     }
   },
   props:['planetName'],
+ 
   watch:{
     planetName(){
       this.updatePlanet();
     }
   },
   mounted(){
-    this.updatePlanet();
+    this.updatePlanet();    
   },
   methods:{
     updatePlanet(){
       this.planet = sourceData.find((item)=>item.name===this.planetName);
-      this.updateData();    
+      this.updateData();
+      this.colorName = "--"+(this.planet.name.toLowerCase())    
     },
     changeModel(model){
       this.model =model;
@@ -55,16 +58,24 @@ export default{
 </script>
 
 <template >
+  <div class="wrap">
     <Pictures class="pictures" :imgUrlProp="imgUrl" />
-    <SwitchBtn class="btn" @passModel="changeModel"/>   
+    <SwitchBtn class="btn" @passModel="changeModel" :modelProp="model" :colorNameProp="colorName" />   
     <Intro class="intro" :planetProp ="planet" :descriptionProp="description" :urlProp="url"  :modelProp="model"/>    
     <DataSection class="data" :planetProp ="planet"/>
-  
+  </div>
  
   
 </template>
 
 <style >
+.wrap{
+  display:flex;
+  flex-direction: column;
+}
 
+.btn{
+  order:-1;
+}
 
 </style>
