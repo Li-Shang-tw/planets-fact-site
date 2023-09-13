@@ -1,4 +1,5 @@
 <template>
+    <section class="intro__section">
     <h1 class="into__title">{{ planet.name }}</h1>
     <p class="intro__description">
        {{ decription }}       
@@ -9,7 +10,7 @@
             <img src="../assets/images/icon-source.svg" alt="icon-source">
         </a>
     </p>
-    
+</section>
 </template>
 <script>
 export default{
@@ -46,3 +47,18 @@ export default{
 
 
 </script>
+
+<style>
+.intro__section{
+text-align: center;
+}
+.into__title{
+    margin-bottom: 0.2em;
+}
+.intro__description{
+    margin-bottom: 2em;
+}
+.intro__link{
+    margin-bottom: 2em;
+}
+</style>

@@ -3,7 +3,7 @@ import sourceData from "../data.json"
 import SwitchBtn from "../components/SwitchBtn.vue"
 import Intro from "../components/Intros.vue"
 import Pictures from "../components/Pictures.vue"
-import DataSection from "../components/DataSection.vue"
+import DataSection from "../components/DataSections.vue"
 export default{
   components:{SwitchBtn,Intro,DataSection,Pictures},
   data(){
