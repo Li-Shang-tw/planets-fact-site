@@ -58,7 +58,7 @@ export default{
     <Pictures class="pictures" :imgUrlProp="imgUrl" />
     <SwitchBtn class="btn" @passModel="changeModel"/>   
     <Intro class="intro" :planetProp ="planet" :descriptionProp="description" :urlProp="url"  :modelProp="model"/>    
-    <DataSection class="data"/>
+    <DataSection class="data" :planetProp ="planet"/>
   
  
   
