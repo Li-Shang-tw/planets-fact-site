@@ -41,7 +41,7 @@ export default{
         </button>
         </div>
        
-        <ul class="nav_list" v-if="showNavList">
+        <ul class="nav_list" :class="{hide:!showNavList}">
             <li class="nav_item" v-for="planet in planets" :Key="planet.name">
                 <router-link class="nav_link" :to="{ name: 'MainView', params: { planetName:planet.name  }}">
                     <div class="nav__link__icon"  :style="iconStyle(planet.name )">.</div>
@@ -52,25 +52,22 @@ export default{
         </ul>
     </nav>
 </template>
-<style>
 
-
+<style>  
 .nav__head{
     justify-content: space-between;
-}
-
-
+} 
 
 /*---按鈕樣式 */
 .nav__btn--toogle{
     background-color: var(--background);
     border:0px;
-}
-
+} 
 .nav_list{    
-    height: 80vh; /*---手機板:導覽列占螢幕高度80%*/    
+    min-height: 80vh; /*---手機板:導覽列占螢幕高度80%*/    
     display:flex;
     flex-direction: column;
+   
 }
 .nav_item{
     flex-grow: 1;
@@ -90,8 +87,51 @@ export default{
     width:0.5em;
     margin:0 0 0 auto;
  }
+ .hide{
+display:none;
+} 
+@media(min-width: 600px){
+    .nav__btn--toogle{
+        display:none;
+    }
+    .nav__head{
+        justify-content: center;
+        margin: 1.5em 0;
+    }
+    /*解除隱藏的list */
+    .nav_list{
+        display:flex;
+        flex-direction: row;
+        min-height: 10vh;
+        
+                     
+    }
+    /*---縮小文字 */
+    .nav_link{
+        font-size: 1rem;
+       
+    }
+    /*---清除圖例 */
+    .nav__link__icon,.nav__link__chevron{
+        display:none;
+    }
 
-
+    
+}
+@media(min-width:1200px){
+    .nav{
+        display:flex;
+        justify-content: space-between;
+        border-bottom: 0.05px solid var(--second-btn);
+    }
+    .nav_item{
+        margin:1.5em 0;
+        border-top:0;        
+    }
+    .nav_list{
+        width:45%;
+    }
+}
 
 
 </style>
