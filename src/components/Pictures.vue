@@ -1,5 +1,7 @@
 <template>
-    <img :src="imgUrl" alt="">    
+    <section class="image_section">
+    <img :src="imgUrl" alt="" class="planetImg"> 
+</section>   
 </template>
 <script>
 export default{
@@ -25,3 +27,15 @@ export default{
 
 }
 </script>
+
+<style>
+.image_section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em;
+}
+.planetImg{
+    max-width:60%;    
+}
+</style>
