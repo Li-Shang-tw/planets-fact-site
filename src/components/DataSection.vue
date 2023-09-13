@@ -41,5 +41,18 @@ export default{
     border:1px solid var( --secondary);
     display:flex;
     justify-content: space-between;
+    padding: 1em;
+    margin-bottom: 0.5em;
 }
+
+.item__title{
+color:var( --secondary);
+}
+
+.item__content{
+font-weight: 600;
+font-size: 1.5rem;
+text-transform: uppercase;
+}
+
 </style>
