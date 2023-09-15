@@ -26,7 +26,7 @@
 
 .switch__btn{
     font-weight: 500;
-    color:var(--secondary);    
+    color:var(--primary);    
 }
 
 .switch_btn_no{
@@ -76,15 +76,20 @@ export default{
             this.$emit('passModel',model);
         },
         currentBtn(btn){
+            const currentWidth =document.body.clientWidth; /*-取得當前裝置的大小-*/          
             const colorVar = "var("+this.color+")";
             if(btn===this.model){
-                return{ 'border-bottom':["0.5em","solid"],
+                if(currentWidth<600){
+                    return{ 'border-bottom':["0.5em","solid"],
                         'border-color':colorVar,/*為何要這樣才能設定border的顏色*/                         
                     }
+                }else{
+                    return{ 'background-color':colorVar }
+                }
+                
             }
             
         }
-
     },
     watch:{
         colorNameProp(){
