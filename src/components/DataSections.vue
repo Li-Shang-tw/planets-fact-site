@@ -55,4 +55,36 @@ font-size: 1.5rem;
 text-transform: uppercase;
 }
 
+@media(min-width: 600px){
+    .data__list{
+        display:flex;
+        justify-content: space-between;
+        margin: 1em 0;
+    }
+    .data__list__item{
+        flex-direction: column;
+        padding-right:  2em;             
+    }
+
+    .item__title{
+        font-size: 0.1rem;
+        margin-bottom: 0.5em;
+    }
+    .item__content{
+        font-weight: 600;
+        font-size: 1rem;
+        
+    }
+}
+
+@media(min-width: 1200px){
+    .item__title{
+        font-size: 1rem;
+    }
+    .item__content{        
+        font-size: 2rem;
+        
+    }
+}
+
 </style>
