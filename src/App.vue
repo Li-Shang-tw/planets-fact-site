@@ -19,8 +19,11 @@ export default{
 <template>
 <div class="container">
    <TheNavigator :showNavList="showNavList" @ChangeshowNavList="ChangeshowNavList"/>
- <RouterView  v-if="!showNavList"/>
+  
+    <RouterView  v-if="!showNavList"/>
  <!--如果展現navlist,就不渲染頁面-->
+   
+
 </div>   
 
 </template>
@@ -30,4 +33,6 @@ export default{
   width:90%;
   margin: 0 auto;
 }
+
+
 </style>

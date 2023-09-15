@@ -57,8 +57,7 @@ export default{
             const colorVar = "var("+this.color+")";
             if(btn===this.model){
                 return{ 'border-bottom':["0.5em","solid"],
-                        'border-color':colorVar,/*為何要這樣才能設定border的顏色*/
-                         
+                        'border-color':colorVar,/*為何要這樣才能設定border的顏色*/                         
                     }
             }
             

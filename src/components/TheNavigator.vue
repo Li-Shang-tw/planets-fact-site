@@ -3,10 +3,19 @@ import sourceData from "../data.json"
 export default{
     data(){
       return {
-        planets:sourceData        
+        planets:sourceData               
       }  
     },
-    props:["showNavList"],
+    props:["showNavList"],  
+    computed:{
+        color(){
+            if(this.$route.params.planetName){
+                return "var(--"+this.$route.params.planetName.toLowerCase()+")"
+            }else{
+                return "red";  //加上這個重新整理就不會無法渲染了
+            }  
+        }
+    },  
     methods:{
         iconStyle(planetName){
             const iconColor ="var(--"+planetName.toLowerCase()+")";
@@ -17,22 +26,17 @@ export default{
                 'border-radius': "50%",
                 color:iconColor,
                 margin:[0,'1em'] ,
-            }
-            
+            }            
         },
         toggleNavList(){
            this.$emit('ChangeshowNavList');
 
         }
-    },
-    mounted(){
-        
-    }
+    }   
 }
 </script>
 
-<template>
-    
+<template>  
     <nav class="nav">
         <div class="nav__head row">
             <h2 class="logo">THE PLANETS</h2>
@@ -90,7 +94,10 @@ export default{
  .hide{
 display:none;
 } 
+
+
 @media(min-width: 600px){
+    /*---隱藏漢堡icon與永遠顯示導覽列 */
     .nav__btn--toogle{
         display:none;
     }
@@ -102,18 +109,26 @@ display:none;
     .nav_list{
         display:flex;
         flex-direction: row;
-        min-height: 10vh;
-        
-                     
-    }
+        justify-content: space-between;
+        min-height: 10vh; 
+        border-bottom: 1px solid var(--second-btn);                     
+    }   
     /*---縮小文字 */
     .nav_link{
-        font-size: 1rem;
-       
+        font-size: 1rem;       
     }
     /*---清除圖例 */
     .nav__link__icon,.nav__link__chevron{
         display:none;
+    }
+    .nav_item{     
+        border-top:0; 
+        flex-grow:0;/*取消之前設置的grow */        
+    }
+    /*----router-active---- */
+    .router-link-active{
+        border-top:3px solid;
+        border-top-color: v-bind(color);
     }
 
     
@@ -124,13 +139,17 @@ display:none;
         justify-content: space-between;
         border-bottom: 0.05px solid var(--second-btn);
     }
-    .nav_item{
-        margin:1.5em 0;
-        border-top:0;        
-    }
+
     .nav_list{
-        width:45%;
+        width:50%;
+        justify-content: space-between;       
+        border-bottom: 0px; 
     }
+    .nav_item{
+        margin:1.5em 0;        
+        padding:0px;              
+    }
+    
 }
 
 
