@@ -19,7 +19,7 @@
 .switch__list{
     border:1px solid var(--secondary);
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding:  1em 0;
     margin-top:1em;
 }
@@ -36,6 +36,28 @@
 
 .switch__btn__subtitle{
     display: none;
+}
+
+@media(min-width:600px){
+    /*---解除隱藏 */
+    .switch_btn_no{
+    display:inline;
+    margin-right: 1em;    
+    }
+    .switch__btn__subtitle{
+    display: inline;
+    }
+    .switch__list{
+    border:0;
+    flex-direction:column;
+    justify-content: center;    
+    }
+    .switch__btn{
+       border:1px solid var(--secondary);
+       padding:1em;
+       margin-bottom: 1em;
+    }
+    
 }
 
 </style>
