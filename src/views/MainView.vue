@@ -16,7 +16,18 @@ export default{
     }
   },
   props:['planetName'],
- 
+  computed:{
+    isDesktop(){
+      const clientWidth = document.body.clientWidth;
+      if(clientWidth <1200){
+        return false
+      }else{
+        return true
+      }
+      
+    }
+    
+  }, 
   watch:{
     planetName(){
       this.updatePlanet();
@@ -59,10 +70,20 @@ export default{
 
 <template >
   <div class="wrap">
+    
     <Pictures class="pictures" :imgUrlProp="imgUrl" />
+    <!--在不同的裝置使用不同的架構-->
+   <template v-if="isDesktop">
+    <div class="container3" >
     <SwitchBtn class="btn" @passModel="changeModel" :modelProp="model" :colorNameProp="colorName" />   
     <Intro class="intro" :planetProp ="planet" :descriptionProp="description" :urlProp="url"  :modelProp="model"/>    
-    <DataSection class="data" :planetProp ="planet"/>
+   </div>
+  </template>
+  <template v-else>   
+    <SwitchBtn class="btn" @passModel="changeModel" :modelProp="model" :colorNameProp="colorName" />   
+    <Intro class="intro" :planetProp ="planet" :descriptionProp="description" :urlProp="url"  :modelProp="model"/>    
+  </template> 
+  <DataSection class="data" :planetProp ="planet"/>
   </div>
  
   
@@ -99,6 +120,25 @@ export default{
     order:3;
     width:100%;
   }
+}
+
+@media(min-width:1200px){  
+  .pictures{
+     width:45%;      
+  }
+  .container3{
+    width:40%;
+    display:flex;
+    flex-direction: column;
+  }
+  .btn{
+    width:100%;    
+  }
+  .intro{
+      
+    width:100%;
+  }
+ 
 }
 
 </style>
