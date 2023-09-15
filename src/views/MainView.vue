@@ -78,4 +78,27 @@ export default{
   order:-1;
 }
 
+@media(min-width:600px){
+  .wrap{
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .pictures{
+    width:100%;
+  }
+  .btn{
+   order:2;
+   width:45%
+  }
+  .intro{
+    order:1;
+    width:45%
+  }
+  .data{
+    order:3;
+    width:100%;
+  }
+}
+
 </style>

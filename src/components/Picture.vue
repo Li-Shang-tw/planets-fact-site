@@ -36,6 +36,6 @@ export default{
     padding: 4em;
 }
 .planetImg{
-    max-width:60%;    
+    max-width:40%;    
 }
 </style>
