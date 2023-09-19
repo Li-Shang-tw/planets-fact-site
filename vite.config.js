@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base:process.env.Node_ENV ==="production"?"/planets-fact-site/":"/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
