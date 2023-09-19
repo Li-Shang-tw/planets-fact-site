@@ -7,6 +7,10 @@ const routes =[
     name: 'MainView',
     component: MainView,
     props:true
+  },
+  //預設路徑是地球
+  {
+    path: '/#', redirect: '/#/Earth' 
   }
 ]
 
