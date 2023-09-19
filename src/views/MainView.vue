@@ -11,7 +11,9 @@ export default{
       planet:{},
       model:'overview',
       description:"",
-      imgUrl:"", 
+      imgOverview:"",
+      imgStructure:"",
+      imgGeology:"",
       colorName:""    
     }
   },
@@ -23,10 +25,8 @@ export default{
         return false
       }else{
         return true
-      }
-      
-    }
-    
+      }     
+    }    
   }, 
   watch:{
     planetName(){
@@ -39,30 +39,29 @@ export default{
   methods:{
     updatePlanet(){
       this.planet = sourceData.find((item)=>item.name===this.planetName);
+      //取得planet的三種model的圖片
+      this.imgOverview = this.planet.images.planet; 
+      this.imgStructure = this.planet.images.internal;    
+      this.imgGeology = this.planet.images.geology; 
       this.updateData();
       this.colorName = "--"+(this.planet.name.toLowerCase())    
     },
     changeModel(model){
       this.model =model;
-      this.updateData();
-      
+      this.updateData();      
     },
     updateData(){
       if(this.model ==="overview"){
         this.description =this.planet.overview.content;
-        this.url =this.planet.overview.source; 
-        this.imgUrl = this.planet.images.planet;      
+        this.url =this.planet.overview.source;            
       }else if(this.model ==="structure"){
         this.description =this.planet.structure.content;
-        this.url =this.planet.structure.source;  
-        this.imgUrl = this.planet.images.internal;               
+        this.url =this.planet.structure.source;
       }else if(this.model ==="geology"){
         this.description =this.planet.geology.content;
-        this.url =this.planet.geology.source; 
-        this.imgUrl = this.planet.images.geology;                    
+        this.url =this.planet.geology.source;            
       }
     }
-
   }
 }
 
@@ -71,7 +70,7 @@ export default{
 <template >
   <div class="wrap">
     
-    <Pictures class="pictures" :imgUrlProp="imgUrl" />
+    <Pictures class="pictures" :modelProp="model" :imgOverviewProp="imgOverview" :imgStructureProp="imgStructure" :imgGeologyProp="imgGeology" />
     <!--在不同的裝置使用不同的架構-->
    <template v-if="isDesktop">
     <div class="container3" >
