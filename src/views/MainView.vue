@@ -70,7 +70,7 @@ export default{
 <template >
   <div class="wrap">
     
-    <Pictures class="pictures" :modelProp="model" :imgOverviewProp="imgOverview" :imgStructureProp="imgStructure" :imgGeologyProp="imgGeology" />
+    <Pictures class="pictures" :modelProp="model" :planetNameProp ="planet.name" />
     <!--在不同的裝置使用不同的架構-->
    <template v-if="isDesktop">
     <div class="container3" >
@@ -83,17 +83,13 @@ export default{
     <Intro class="intro" :planetProp ="planet" :descriptionProp="description" :urlProp="url"  :modelProp="model"/>    
   </template> 
   <DataSection class="data" :planetProp ="planet"/>
-  </div>
- 
-  
+  </div>  
 </template>
-
 <style >
 .wrap{
   display:flex;
   flex-direction: column;
 }
-
 .btn{
   order:-1;
 }

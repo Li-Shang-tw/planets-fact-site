@@ -1,5 +1,7 @@
 <template>
     <section class="image_section">
+       
+       
        <template v-if="model=='overview'">
         <img :src="imgOverview" alt="imgOverview" class="planetImg"> 
        </template>
@@ -18,41 +20,36 @@
 </section>   
 </template>
 <script>
+
 export default{
     data(){
         return{
-            imgOverview: "",
-            imgStructure: this.formatUrl(this.imgStructureProp),
-            imgGeology: this.formatUrl(this.imgGeologyProp),
-            model:this.modelProp
+            planetName:this.planetNameProp,
+            model:this.modelProp,
+            imgOverview:"",
+            imgStructure:"",
+            imgGeology:"" 
         }
     },
-    props:["imgOverviewProp","imgStructureProp","imgGeologyProp","modelProp"],
+    props:["modelProp","planetNameProp"],
     watch:{
-        imgOverviewProp(){            
-            this.imgOverview =  this.formatUrl(this.imgOverviewProp);
-        },
-        imgStructureProp(){            
-            this.imgStructure =  this.formatUrl(this.imgStructureProp);
-        },
-        imgGeologyProp(){            
-            this.imgGeology =  this.formatUrl(this.imgGeologyProp);
+        planetNameProp(){
+            this.planetName=this.planetNameProp;
+            this.getImg(this.planetName);
         },
         modelProp(){
             this.model = this.modelProp;
         }
     },
     methods:{
-        formatUrl(url){
-            let newUrl = ".."+  url.slice(1);
-            
-            return newUrl
+        getImg(name){
+            const nameLowcase =name.toLowerCase();
+            this.imgOverview =  new URL(`../assets/images/planet-${nameLowcase}.svg`, import.meta.url).href;
+            this.imgStructure =new URL(`../assets/images/planet-${nameLowcase}-internal.svg`, import.meta.url).href;
+            this.imgGeology = new URL(`../assets/images/geology-${nameLowcase}.png`, import.meta.url).href;
         }
+    }   
     }
-   
-   
-
-}
 </script>
 
 <style>
