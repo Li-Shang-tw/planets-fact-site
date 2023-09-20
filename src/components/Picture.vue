@@ -12,6 +12,7 @@
         <img :src="imgGeology" alt="imgGeology" class="planetImg planetImg2"> 
         </div>        
        </template>
+       
 
     
 </section>   
@@ -20,7 +21,7 @@
 export default{
     data(){
         return{
-            imgOverview: this.formatUrl(this.imgOverviewProp),
+            imgOverview: "",
             imgStructure: this.formatUrl(this.imgStructureProp),
             imgGeology: this.formatUrl(this.imgGeologyProp),
             model:this.modelProp
@@ -43,7 +44,8 @@ export default{
     },
     methods:{
         formatUrl(url){
-            let newUrl = "/src"+  url.slice(1);
+            let newUrl = ".."+  url.slice(1);
+            
             return newUrl
         }
     }

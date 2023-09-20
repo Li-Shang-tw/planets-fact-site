@@ -30,8 +30,7 @@
 }
 
 .switch_btn_no{
-    display:none;
-    
+    display:none;    
 }
 
 .switch__btn__subtitle{
@@ -56,10 +55,8 @@
        border:1px solid var(--secondary);
        padding:1em;
        margin-bottom: 1em;
-    }
-    
+    }    
 }
-
 </style>
 
 <script>

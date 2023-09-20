@@ -8,6 +8,16 @@ export default{
       showNavList:false
     }    
   }, 
+  computed:{
+    isDesktop(){
+      const clientWidth = document.body.clientWidth;
+      if(clientWidth <1200){
+        return false
+      }else{
+        return true
+      }     
+    }    
+  }, 
   methods:{
     ChangeshowNavList(){
       this.showNavList =!this.showNavList;
@@ -19,8 +29,17 @@ export default{
 <template>
 <div class="container">
    <TheNavigator :showNavList="showNavList" @ChangeshowNavList="ChangeshowNavList"/>
-  <div class="container2">    
-    <RouterView  v-if="!showNavList"/>
+  
+   <div class="container2"> 
+    <!--只有手機板,會再顯示導覽列時,不渲染主畫面-->
+   <template v-if="isDesktop">
+    <RouterView />
+    </template>
+    <template v-else>
+      <RouterView  v-if="!showNavList"/>
+    </template>
+      
+    
   </div>
  <!--如果展現navlist,就不渲染頁面-->
    

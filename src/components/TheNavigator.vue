@@ -30,7 +30,6 @@ export default{
         },
         toggleNavList(){
            this.$emit('ChangeshowNavList');
-
         }
     }   
 }
@@ -46,7 +45,8 @@ export default{
         </div>
        
         <ul class="nav_list" :class="{hide:!showNavList}">
-            <li class="nav_item" v-for="planet in planets" :Key="planet.name">
+            <!--點選之後,會收起nav_list-->
+            <li class="nav_item" v-for="planet in planets" :Key="planet.name"   @click="toggleNavList">
                 <router-link class="nav_link" :to="{ name: 'MainView', params: { planetName:planet.name  }}">
                     <div class="nav__link__icon"  :style="iconStyle(planet.name )">.</div>
                     {{ planet.name }}
@@ -70,8 +70,7 @@ export default{
 .nav_list{    
     min-height: 80vh; /*---手機板:導覽列占螢幕高度80%*/    
     display:flex;
-    flex-direction: column;
-   
+    flex-direction: column;   
 }
 .nav_item{
     flex-grow: 1;
@@ -85,7 +84,6 @@ export default{
     display:flex;
     align-items: center;
     min-height: 10vh;  /*---每個項目佔總高度的14% */
-
 }
 .nav__link__chevron{
     width:0.5em;
@@ -94,7 +92,6 @@ export default{
  .hide{
 display:none;
 } 
-
 
 @media(min-width: 600px){
     /*---隱藏漢堡icon與永遠顯示導覽列 */
@@ -129,9 +126,7 @@ display:none;
     .router-link-active{
         border-top:3px solid;
         border-top-color: v-bind(color);
-    }
-
-    
+    }    
 }
 @media(min-width:1200px){
     .nav{
@@ -148,9 +143,6 @@ display:none;
     .nav_item{
         margin:1.5em 0;        
         padding:0px;              
-    }
-    
+    }    
 }
-
-
 </style>
