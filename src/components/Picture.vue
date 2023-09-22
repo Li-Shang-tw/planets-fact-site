@@ -1,6 +1,5 @@
 <template>
-    <section class="image_section">
-       
+    <section class="image_section">   
        
        <template v-if="model=='overview'">
         <img :src="imgOverview" alt="imgOverview" class="planetImg"> 
@@ -59,16 +58,19 @@ export default{
     align-items: center;
     padding: 4em;
 }
-
-
 .planetImg{
     max-width:50%;    
 }
-
-
 .planetImg2{
     max-width:20%;  
     margin-left:-35%; 
     margin-bottom: -12%;  
+}
+.img_box{
+display:flex;
+align-items: flex-end;
+justify-content: center;
+
+
 }
 </style>
