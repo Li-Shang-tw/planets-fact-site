@@ -37,7 +37,13 @@ export default{
 }
 </script>
 <style>
+
+.data__list{
+    display:flex;
+    flex-direction: column;
+}
 .data__list__item{
+      
     border:1px solid var( --secondary);
     display:flex;
     justify-content: space-between;
@@ -58,12 +64,12 @@ text-transform: uppercase;
 @media(min-width: 600px){
     .data__list{
         display:flex;
-        justify-content: space-between;
-        margin: 1em 0;
+        flex-direction: row;
+        gap:1em;
     }
     .data__list__item{
-        flex-direction: column;
-        padding-right:  2em;             
+        flex-direction: column;  
+        width:100%;          
     }
 
     .item__title{
