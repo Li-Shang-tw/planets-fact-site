@@ -37,6 +37,7 @@ export default{
 
 <template>  
     <nav class="nav">
+        
         <div class="nav__head row">
             <h2 class="logo">THE PLANETS</h2>
         <button class="nav__btn--toogle" @click="toggleNavList">
@@ -54,10 +55,13 @@ export default{
                 </router-link>
             </li>
         </ul>
+   
     </nav>
+
 </template>
 
-<style>  
+<style> 
+
 .nav__head{
     justify-content: space-between;
 } 

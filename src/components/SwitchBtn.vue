@@ -16,8 +16,7 @@
 </template>
 
 <style>
-.switch__list{
-    border:1px solid var(--secondary);
+.switch__list{    
     display:flex;
     justify-content: space-between;
     padding:  1em 0;

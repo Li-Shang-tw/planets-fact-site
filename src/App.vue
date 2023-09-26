@@ -27,7 +27,7 @@ export default{
 </script>
 
 <template>
-<div class="container">
+   <div class="container">
    <TheNavigator :showNavList="showNavList" @ChangeshowNavList="ChangeshowNavList"/>
   
    <div class="container2"> 
@@ -40,9 +40,7 @@ export default{
     </template>
       
     
-  </div>
- <!--如果展現navlist,就不渲染頁面-->
-   
+  </div> 
 
 </div>   
 
