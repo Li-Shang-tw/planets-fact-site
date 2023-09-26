@@ -27,6 +27,7 @@ export default{
 </script>
 
 <template>
+  <div class="wrap">
    <div class="container">
    <TheNavigator :showNavList="showNavList" @ChangeshowNavList="ChangeshowNavList"/>
   
@@ -42,11 +43,15 @@ export default{
     
   </div> 
 
-</div>   
+</div> 
+</div>  
 
 </template>
 
 <style >
+.wrap{
+background-image: url("./assets/images/background-stars.svg");
+}
 .container{
   width:90%;
   margin: 0 auto;
