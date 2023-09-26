@@ -60,25 +60,19 @@ export default{
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 4em 0;
-    
+    padding: 4em 0;   
 }
 
 .img_box{
     display:flex;
     flex-direction: column;   
-    align-items: center;
-   
+    align-items: center;   
 }
-
 .planetImg{    
-    max-width:50%;
-        
+    max-width:50%;        
 }
 .planetImg2{    
     max-width:20%; 
-   
+    margin-top: -10%;   
 }
-
-
 </style>
