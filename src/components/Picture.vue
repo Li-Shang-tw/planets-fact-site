@@ -2,10 +2,14 @@
     <section class="image_section">   
        
        <template v-if="model=='overview'">
+        
         <img :src="imgOverview" alt="imgOverview" class="planetImg"> 
+       
        </template>
        <template  v-else-if="model=='structure'">
-        <img :src="imgStructure" alt="imgStructure" class="planetImg"> 
+        
+        <img :src="imgStructure" alt="imgStructure" class="planetImg">
+        
        </template>
        <template  v-else-if="model=='geology'">
         <div class="img_box">
@@ -56,21 +60,25 @@ export default{
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 4em;
+    padding: 4em 0;
+    
 }
-.planetImg{
-    max-width:50%;    
-}
-.planetImg2{
-    max-width:20%;  
-    margin-left:-35%; 
-    margin-bottom: -12%;  
-}
+
 .img_box{
-display:flex;
-align-items: flex-end;
-justify-content: center;
-
-
+    display:flex;
+    flex-direction: column;   
+    align-items: center;
+   
 }
+
+.planetImg{    
+    max-width:50%;
+        
+}
+.planetImg2{    
+    max-width:20%; 
+   
+}
+
+
 </style>
