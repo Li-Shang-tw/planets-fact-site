@@ -1,14 +1,11 @@
 # planets-fact
 
-This template should help get you started developing with Vue 3 in Vite.
+## 專案說明:
+用Vue、vite與Vue Router製作的SPA,可以透過導覽列與按鈕切換瀏覽八大行星的總覽(overview)、內部結構(internal structure)、外部地理(surface geology)等不同資訊
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Build With 
+-  Vue
+- Vue Router
 
 ## Project Setup
 
